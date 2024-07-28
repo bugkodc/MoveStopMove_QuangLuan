@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3fd2245b835f194fa5dde0e7bc58184, type: 3}
+  m_Name: ListWeaponMaterials
+  m_EditorClassIdentifier: 
+  listWeaponMaterialDatas:
+  - numberMaterial: 2
+    weaponType: 0
+    weaponMaterialDatas:
+    - typeMaterial: 0
+      materials:
+      - {fileID: 2100000, guid: fc80d63c8f8c64706995699d0ef976f3, type: 2}
+      - {fileID: 2100000, guid: 601e3d40c046e4859938e266b96ff3e9, type: 2}
+    - typeMaterial: 1
+      materials:
+      - {fileID: 2100000, guid: 601e3d40c046e4859938e266b96ff3e9, type: 2}
+      - {fileID: 2100000, guid: fc80d63c8f8c64706995699d0ef976f3, type: 2}
+  - numberMaterial: 5
+    weaponType: 1
+    weaponMaterialDatas:
+    - typeMaterial: 0
+      materials:
+      - {fileID: 2100000, guid: 8ee19095a38e048eb8be205e09c619c0, type: 2}
+      - {fileID: 2100000, guid: 9989a6e950eabc84890b57cfe47868cc, type: 2}
+    - typeMaterial: 1
+      materials:
+      - {fileID: 2100000, guid: 5655797f001a14f6f95277e58b18013a, type: 2}
+      - {fileID: 2100000, guid: 7f85281e1455c43f6a5cbd2a6db13e2d, type: 2}
+    - typeMaterial: 2
+      materials:
+      - {fileID: 2100000, guid: 7f85281e1455c43f6a5cbd2a6db13e2d, type: 2}
+      - {fileID: 2100000, guid: 7f85281e1455c43f6a5cbd2a6db13e2d, type: 2}
+    - typeMaterial: 3
+      materials:
+      - {fileID: 2100000, guid: 5655797f001a14f6f95277e58b18013a, type: 2}
+      - {fileID: 2100000, guid: 5655797f001a14f6f95277e58b18013a, type: 2}
+    - typeMaterial: 4
+      materials:
+      - {fileID: 2100000, guid: 7f85281e1455c43f6a5cbd2a6db13e2d, type: 2}
+      - {fileID: 2100000, guid: 5655797f001a14f6f95277e58b18013a, type: 2}
+  - numberMaterial: 2
+    weaponType: 2
+    weaponMaterialDatas:
+    - typeMaterial: 0
+      materials:
+      - {fileID: 2100000, guid: 67525c430a683420ca902ea3bf54ee63, type: 2}
+      - {fileID: 2100000, guid: a86625ccd940144348ac9058da3315a3, type: 2}
+    - typeMaterial: 1
+      materials:
+      - {fileID: 2100000, guid: 68df3a3338c0946fba5567216eaee66a, type: 2}
+      - {fileID: 2100000, guid: 4f8303959ad3a44d39db538417523f82, type: 2}

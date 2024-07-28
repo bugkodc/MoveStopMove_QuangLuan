@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6dbd5ab6763f94543ad4332479cf21d5, type: 3}
+  m_Name: SkinDataas
+  m_EditorClassIdentifier: 
+  listData:
+  - indexItem: 0
+    SkinMaterial: {fileID: 2100000, guid: a92485ac99713dc45902de7c3b21df28, type: 2}
+    PantMaterial: {fileID: 2100000, guid: 6116733206bbdbb479cc6d5f1a321e2c, type: 2}
+    HatPrefab: {fileID: 2244711236556278164, guid: 95dbf804e4c5fc74282b2dcfadb3d87b, type: 3}
+    wingPrefab: {fileID: 2018017782062706512, guid: 9e309c00e20bbeb4b9f4387e7bc49a9a, type: 3}
+    tailPrefab: {fileID: 4606916620020318069, guid: 3144d43c33992bd4f8bb8de8777987bc, type: 3}
+  - indexItem: 1
+    SkinMaterial: {fileID: 2100000, guid: 6116733206bbdbb479cc6d5f1a321e2c, type: 2}
+    PantMaterial: {fileID: 2100000, guid: 00f9251bc83c2442e81f93e83a7706cf, type: 2}
+    HatPrefab: {fileID: 701753702207454946, guid: 36e98fa0ca05f9a48a96d917aa241a09, type: 3}
+    wingPrefab: {fileID: 2289534089488482787, guid: 8208a7cb3eff39a4792d40b0b70e91b3, type: 3}
+    tailPrefab: {fileID: 7105311092947719159, guid: b17bbdab1ebd04644a0bce10c420db59, type: 3}
+  - indexItem: 1
+    SkinMaterial: {fileID: 2100000, guid: 6116733206bbdbb479cc6d5f1a321e2c, type: 2}
+    PantMaterial: {fileID: 2100000, guid: 00f9251bc83c2442e81f93e83a7706cf, type: 2}
+    HatPrefab: {fileID: 701753702207454946, guid: 36e98fa0ca05f9a48a96d917aa241a09, type: 3}
+    wingPrefab: {fileID: 2289534089488482787, guid: 8208a7cb3eff39a4792d40b0b70e91b3, type: 3}
+    tailPrefab: {fileID: 7105311092947719159, guid: b17bbdab1ebd04644a0bce10c420db59, type: 3}
+  - indexItem: 1
+    SkinMaterial: {fileID: 2100000, guid: 6116733206bbdbb479cc6d5f1a321e2c, type: 2}
+    PantMaterial: {fileID: 2100000, guid: 00f9251bc83c2442e81f93e83a7706cf, type: 2}
+    HatPrefab: {fileID: 701753702207454946, guid: 36e98fa0ca05f9a48a96d917aa241a09, type: 3}
+    wingPrefab: {fileID: 2289534089488482787, guid: 8208a7cb3eff39a4792d40b0b70e91b3, type: 3}
+    tailPrefab: {fileID: 7105311092947719159, guid: b17bbdab1ebd04644a0bce10c420db59, type: 3}
+  - indexItem: 1
+    SkinMaterial: {fileID: 2100000, guid: 6116733206bbdbb479cc6d5f1a321e2c, type: 2}
+    PantMaterial: {fileID: 2100000, guid: 00f9251bc83c2442e81f93e83a7706cf, type: 2}
+    HatPrefab: {fileID: 701753702207454946, guid: 36e98fa0ca05f9a48a96d917aa241a09, type: 3}
+    wingPrefab: {fileID: 2289534089488482787, guid: 8208a7cb3eff39a4792d40b0b70e91b3, type: 3}
+    tailPrefab: {fileID: 7105311092947719159, guid: b17bbdab1ebd04644a0bce10c420db59, type: 3}
