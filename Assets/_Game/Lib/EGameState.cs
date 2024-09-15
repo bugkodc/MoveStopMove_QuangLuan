@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum EGameState 
+public enum EGameState
 {
-    MainMenu,
-    GamePlay,
-    Pause,
-    Finish
+    MainMenu = 0,
+    GamePlay = 1,
+    Pause = 2,
+    Finish = 3
 }

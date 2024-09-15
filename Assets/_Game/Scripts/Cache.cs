@@ -6,8 +6,6 @@ public class Cache : MonoBehaviour
 {
     private static Dictionary<Collider, Character> characters = new Dictionary<Collider, Character>();
     private static Dictionary<Collider, IHit> iHits = new Dictionary<Collider, IHit>();
-  
-    
     public static Character GetCharacter(Collider collider)
     {
         if (!characters.ContainsKey(collider))

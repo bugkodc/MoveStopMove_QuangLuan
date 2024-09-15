@@ -86,12 +86,8 @@ public class Level : MonoBehaviour
         listCharacters.Remove(character);
         character.OnDeath();
         UpdateListChar();
-        totalAmount--;
-        
+        totalAmount--; 
     }
-
-
-
     public void Despawn()
     {
         for (int i = 0; i < listCharacters.Count; i++)
