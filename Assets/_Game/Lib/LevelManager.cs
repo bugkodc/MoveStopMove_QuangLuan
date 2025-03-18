@@ -7,6 +7,7 @@ public class LevelManager : Singleton<LevelManager>
     public Level[] levels;
     public Level currentLevel;
     public Player player;
+    public GameObject playerPrefab;
     private void Start()
     {
         //PlayerPrefs.DeleteAll();// reset data

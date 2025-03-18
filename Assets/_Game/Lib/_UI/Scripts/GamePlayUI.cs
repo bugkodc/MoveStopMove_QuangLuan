@@ -7,6 +7,7 @@ public class GamePlayUI : UICanvas
 {
     [SerializeField] private GameObject settingBtn;
     public Text Alive;
+    public Text Play;
 
     private void Update()
     {

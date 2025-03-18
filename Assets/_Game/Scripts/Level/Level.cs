@@ -1,3 +1,4 @@
+using Photon.Pun;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,7 +7,7 @@ public class Level : MonoBehaviour
 {
     [SerializeField] private Transform obstacleTF;
     [SerializeField] private Character BotPrefab;
-    [SerializeField] private Player player;
+    [SerializeField] public Player player;
     private float sizeObstacle;
     private float targetAmount = 5; // So luong bot tren man hinh
 
@@ -41,7 +42,7 @@ public class Level : MonoBehaviour
     }
     public void SpawnPlayer()
     {
-
+      
         if (player == null)
         {
             player = LevelManager.Instance.player;

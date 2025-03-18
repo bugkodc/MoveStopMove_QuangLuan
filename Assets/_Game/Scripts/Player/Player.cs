@@ -1,10 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 public class Player : Character
 {
-    private bool canAttack => weapon.isActiveAndEnabled;
+    private bool canAttack() 
+    {
+        if(weapon == null) SetWeapon();
+        return weapon.isActiveAndEnabled;
+    } 
 
     [Header("Transform for Skins")]
     public Transform HatTF;
@@ -15,44 +20,70 @@ public class Player : Character
     public SkinnedMeshRenderer pantRender;
     public SkinnedMeshRenderer skinRender;
     public string playerName;
-
+    public PhotonPlayerRPC _photonPlayerRPC; 
     private void Start()
     {
+        _photonPlayerRPC = GetComponent<PhotonPlayerRPC>();
         LoadDataPlayer();
     }
     private void Update()
     {
-        if (level == null) return;
-        CheckIsStateGamePlay();
-        CheckIsStateGameFinish();
+        if (level == null)
+        {
+            level = LevelManager.Instance.currentLevel;
+            return;
+        }
+        if (_photonPlayerRPC == null)
+        {
+            Debug.Log("NullPhoton");
+            return;
+        } 
+        if (_photonPlayerRPC.view.IsMine)
+        {
+            Debug.Log("_photonPlayerRPC");
+            CheckIsStateGamePlay();
+            CheckIsStateGameFinish();
+        }
+        //CheckIsStateGamePlay();
+       // CheckIsStateGameFinish();
 
     }
+    // // rpc
     public void CheckIsStateGamePlay()
     {
         if (GameManagerr.Instance.IsState(EGameState.GamePlay))
         {
-            if (!JoystickInput.Instance.isControl && !isAttack()) // Dung va co bot trong vung tan cong
+            Debug.Log("RunGame");
+            if (!JoystickInput.Instance.isControl() && !isAttack()) // Dung va co bot trong vung tan cong
             {
-                ChangeAnim(Constant.ANIM_IDLE);
+                // rpc
+                _photonPlayerRPC.view.RPC("ChangeAnimatorRPC", RpcTarget.All, Constant.ANIM_IDLE);
             }
-            else if (!JoystickInput.Instance.isControl && canAttack && isAttack() && level.IsExistChar(FindCharacterClosed())) // Dung va co the tan cong, co bot trong vung tan cong
+            else if (!JoystickInput.Instance.isControl() && canAttack() && isAttack() && level.IsExistChar(FindCharacterClosed())) // Dung va co the tan cong, co bot trong vung tan cong
             {
-                StopMoving();
-                ChangeAnim(Constant.ANIM_ATTACK);
+                // rpc
+                //StopMoving();
+                _photonPlayerRPC.view.RPC("StopMoving", RpcTarget.All);
+                _photonPlayerRPC.view.RPC("ChangeAnimatorRPC", RpcTarget.All, Constant.ANIM_ATTACK);
                 timerWait += Time.deltaTime;
-                Throw();
+                _photonPlayerRPC.view.RPC("Throw", RpcTarget.All);
+                //Throw();
                 if (timerWait > 0.25)
                 {
-                    Attack();
+                    _photonPlayerRPC.view.RPC("AttackRPC", RpcTarget.All);
+                    //Attack();
                 }
             }
-            else if (JoystickInput.Instance.isControl)
+            else if (JoystickInput.Instance.isControl())
             {
-                ChangeAnim(Constant.ANIM_RUN);
-                Move();
+                // rpc
+                // ChangeAnim(Constant.ANIM_RUN);
+                _photonPlayerRPC.view.RPC("ChangeAnimatorRPC", RpcTarget.All, Constant.ANIM_RUN);
+                _photonPlayerRPC.view.RPC("MoveRPC", RpcTarget.All);
             }
         }
     }
+    
     public void CheckIsStateGameFinish()
     {
         if (GameManagerr.Instance.IsState(EGameState.Finish))
@@ -145,6 +176,20 @@ public class Player : Character
             Destroy(listWeapon[i].gameObject);
         }
     }
-
+    [PunRPC]
+    private void ChangeAnimatorRPC(string Animtor)
+    {
+        ChangeAnim(Animtor);
+    }
+    [PunRPC]
+    private void MoveRPC()
+    {
+        Move();
+    }
+    [PunRPC]
+    private void AttackRPC()
+    {
+        Attack();
+    }
 
 }

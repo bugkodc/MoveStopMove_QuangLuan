@@ -7,11 +7,18 @@ public class MainMenu : UICanvas
     [SerializeField] private Text playerName;
     public void PlayButton()
     {
-        LevelManager.Instance.OnStart();
-        GameManagerr.Instance.ChangeState(EGameState.GamePlay);
-        DataPlayerController.coinInLevel =0;
-        UIManager.Instance.OpenUI<GamePlayUI>();
-        JoystickInput.Instance.isMouse = false;
+        /* LevelManager.Instance.OnStart();
+         GameManagerr.Instance.ChangeState(EGameState.GamePlay);
+         DataPlayerController.coinInLevel =0;
+         UIManager.Instance.OpenUI<GamePlayUI>();
+         JoystickInput.Instance.isMouse = false;*/
+        UIManager.Instance.CloseUI<Coin>();
+        UIManager.Instance.OpenUI<UI_LoadRoom>();
+        Close();
+    }
+    public void PlayButton_Step2()
+    {   
+        UIManager.Instance.OpenUI<UI_LoadRoom>();
         Close();
     }
     public void WeaponBtn()

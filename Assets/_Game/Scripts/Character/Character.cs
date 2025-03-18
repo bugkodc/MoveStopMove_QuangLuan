@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UIElements;
+using Photon.Pun;
 public class Character : GameUnit, IHit
 {
 
@@ -139,6 +140,7 @@ public class Character : GameUnit, IHit
     {
 
     }
+   
     public void ChangeAnim(string animName)
     {
         if (currentAnimName != animName)
@@ -223,7 +225,6 @@ public class Character : GameUnit, IHit
             TF.forward = attackArea.transform.forward;
         }
     }
-
     public Character FindCharacterClosed()
     {
         Character closedChar = null;
@@ -241,11 +242,8 @@ public class Character : GameUnit, IHit
         }
         return closedChar;
     }
-
-
     public void Throw()
     {
-
         Character closed = FindCharacterClosed();
         if (listCharInAttact.Count > 0 && level.IsExistChar(closed))
         {
@@ -253,7 +251,7 @@ public class Character : GameUnit, IHit
             ChangeAnim(Constant.ANIM_ATTACK);
         }
     }
-
+   
     public void Attack()
     {
         weapon.gameObject.SetActive(false);
